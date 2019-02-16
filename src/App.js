@@ -11,7 +11,12 @@ class App extends Component {
   state = {
     chosen: "Choose A Nut",
     servings: 4,
-    consistency: 4
+    consistency: 4,
+    date: false,
+    Vanilla: false,
+    honey: false,
+    cinammon: false,
+    Cardamon: false
   }
  
   chooseNut = (chosen) => {
