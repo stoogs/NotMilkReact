@@ -5,6 +5,8 @@ const servings = (props) => {
     <div>
     <input type="range" min={1} max={8} steps={2}  onChange={props.servingSize} value={props.servings} />
       {props.children}
+      {console.log("Servings", props.servings)}
+
     </div>
     )
 }

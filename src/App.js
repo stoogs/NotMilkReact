@@ -18,6 +18,7 @@ class App extends Component {
     option2: false,   //honey
     option3: false,   //cinammon
     option4: false,   //cardamon
+
   }
 
   chooseNut = (chosen) => {
@@ -38,8 +39,12 @@ class App extends Component {
     })
   }
 
-  handleFormSubmit = (event) => {
-       console.log( event.target.checked)
+  additionsHandler = (event) => {
+      if(event.target.name==="Dates") {this.setState({ option0: event.target.checked})}
+      else if(event.target.name==="Honey") {this.setState({ option1: event.target.checked})}
+      else if(event.target.name==="Vanilla") {this.setState({ option2: event.target.checked})}
+      else if(event.target.name==="Cinammon") {this.setState({ option3: event.target.checked})}
+      else if(event.target.name==="Cardamon") {this.setState({ option4: event.target.checked})}
   }
  
 
@@ -47,7 +52,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        {console.log(this.state.option0, this.state.option1)}
+    
         <Logo>LOGO</Logo>
 
         <Heading chosen={this.state.chosen} />
@@ -69,12 +74,14 @@ class App extends Component {
         <p>Consistency {this.state.consistency}</p>
         </Consistency> 
        
-        <Additions  label={"date"} option={this.state.option0}  additionsChecker={this.handleFormSubmit}/>
-        <Additions  label={"honey"}option={this.state.option1}  additionsChecker={this.handleFormSubmit}/>
+        <Additions  
+          label={["Dates","Honey","Vanilla","Cinammon","Cardamon"]}  
+          options={[this.state.option0,this.state.option1,this.state.option2,this.state.option3,this.state.option4]}
+          additions={this.additionsHandler}>
+        </Additions>
 
-
-
- </div>
+    {console.clear()}
+  </div>
     );
   }
 }
