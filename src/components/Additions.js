@@ -2,11 +2,11 @@ import React from 'react';
 
 const additions  = (props) => {
     return (
-    <div>
-     <input type="checkbox" name="option" value="true" onChange={props.additionsChecker(props.option)} value={props.option} />
-        <button>Test</button>
-        {props.children}
-    </div>
+        <form name="additionsForm"> 
+            {/* <input type="checkbox" onClick={props.additionsChecker}  /> */}
+            <label>{props.label}</label>
+            <input type="checkbox" onClick={(event) => console.log(event.target.checked)}  />
+        </form>
     )
 }
 

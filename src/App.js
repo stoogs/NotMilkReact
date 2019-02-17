@@ -38,10 +38,8 @@ class App extends Component {
     })
   }
 
-  handleFormSubmit = (option) => {
-    this.setState( {
-      option : this.state.option0 === true ? false : true,
-    })
+  handleFormSubmit = (event) => {
+       console.log( event.target.checked)
   }
  
 
@@ -71,10 +69,9 @@ class App extends Component {
         <p>Consistency {this.state.consistency}</p>
         </Consistency> 
        
-        <Additions  option={this.state.option0}  additionsChecker={this.handleFormSubmit}/>
-        <Additions  option={this.state.option1}  additionsChecker={this.handleFormSubmit}/>  //not good i know
+        <Additions  label={"date"} option={this.state.option0}  additionsChecker={this.handleFormSubmit}/>
+        <Additions  label={"honey"}option={this.state.option1}  additionsChecker={this.handleFormSubmit}/>
 
-     
 
 
  </div>
