@@ -5,20 +5,21 @@ import Heading from './components/Heading';
 import Logo from './components/Logo';
 import Choice from './components/Choice';
 import Servings from './components/Servings';
-import Consistency from './components/Consistency'
+import Consistency from './components/Consistency';
+import Additions from './components/Additions';
 
 class App extends Component {
   state = {
     chosen: "Choose A Nut",
     servings: 4,
     consistency: 4,
-    date: false,
-    Vanilla: false,
-    honey: false,
-    cinammon: false,
-    Cardamon: false
+    option0: false,   //date
+    option1: false,   //vanilla
+    option2: false,   //honey
+    option3: false,   //cinammon
+    option4: false,   //cardamon
   }
- 
+
   chooseNut = (chosen) => {
     this.setState({
       chosen: chosen
@@ -37,12 +38,18 @@ class App extends Component {
     })
   }
 
+  handleFormSubmit = (option) => {
+    this.setState( {
+      option : this.state.option0 === true ? false : true,
+    })
+  }
+ 
+
   render() {
 
     return (
       <div className="App">
-        {console.log(this.state.servings)}
-
+        {console.log(this.state.option0, this.state.option1)}
         <Logo>LOGO</Logo>
 
         <Heading chosen={this.state.chosen} />
@@ -63,8 +70,14 @@ class App extends Component {
         <Consistency consistency={this.state.consistency} consistencyValue={this.consistencyHandler}>
         <p>Consistency {this.state.consistency}</p>
         </Consistency> 
-        </div>
+       
+        <Additions  option={this.state.option0}  additionsChecker={this.handleFormSubmit}/>
+        <Additions  option={this.state.option1}  additionsChecker={this.handleFormSubmit}/>  //not good i know
 
+     
+
+
+ </div>
     );
   }
 }
