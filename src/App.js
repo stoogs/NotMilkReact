@@ -13,12 +13,13 @@ class App extends Component {
     chosen: "Choose A Nut",
     servings: 4,
     consistency: 4,
+    additionsNames: ["Dates","Honey","Vanilla","Cinammon","Cardamon"],
+    additionsCheckBoxValues: [false,false,false,false,false],
     option0: false,   //date
     option1: false,   //vanilla
     option2: false,   //honey
     option3: false,   //cinammon
     option4: false,   //cardamon
-
   }
 
   chooseNut = (chosen) => {
@@ -75,11 +76,10 @@ class App extends Component {
         </Consistency> 
        
         <Additions  
-          label={["Dates","Honey","Vanilla","Cinammon","Cardamon"]}  
+          labels={this.state.additionsNames}  
           options={[this.state.option0,this.state.option1,this.state.option2,this.state.option3,this.state.option4]}
           additions={this.additionsHandler}>
         </Additions>
-
     {console.clear()}
   </div>
     );
