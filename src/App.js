@@ -69,7 +69,9 @@ class App extends Component {
                       nutChoice={this.state.chosen}
                       nutIndividualCalories={this.state.nutIndividualCalories} 
                       nut100gCalories={this.state.nut100gCalories} 
-                      nutIndividualWeight={this.state.nutIndividualWeight} />
+                      nutIndividualWeight={this.state.nutIndividualWeight}
+                      options={ [this.state.option0,this.state.option1,this.state.option2, this.state.option3,this.state.option4] }
+                      />
    
         <Servings servings={this.state.servings} servingSize={this.servingSizeHandler}>
           <p>Servings {this.state.servings}</p>
