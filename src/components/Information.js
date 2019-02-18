@@ -12,7 +12,7 @@ const information = ( props ) => {
     let walnut =    ([props.nutIndividualCalories[7],props.nut100gCalories[7],props.nutIndividualWeight[7], 130]);
     // let nutGramsRequiredPerLitre = [ 125,140,150,100,134,150,133,130 ]
 
-    let chosen = pecan;
+    let chosen = almond;
 
          if (props.nutChoice === "Almond") { chosen = almond}
     else if (props.nutChoice === "Cashew") { chosen = cashew}
@@ -23,15 +23,20 @@ const information = ( props ) => {
     else if (props.nutChoice === "Brazil Nut") { chosen = brazil}
     else if (props.nutChoice === "Walnut") { chosen = walnut}
   
-    let totalCalories = ( (chosen[1]/100 * chosen[3]) * props.consistency )
+    let totalCalories = ( (chosen[1]/100 * chosen[3]) * props.consistency )  // caloriesper100g / 100 * nuts needed per litre
     let perServing = totalCalories / props.servings
-  
+    let amountOfNuts = ((props.servings*chosen[3]) / chosen[2]) * (props.consistency/4);
+    
+    console.log("AON", amountOfNuts)
   return (
     <>
       <h1>Information</h1>
-      {/* <h3>Total Calories: {totalCalories}</h3> */}
-      <h2></h2>
-      <h3>Calories Per 250ml Serving: {perServing}</h3>
+      <h3>{Math.floor(amountOfNuts*chosen[2])} grams of {props.nutChoice}s needed or {props.servings*props.consistency/4} cups or {Math.floor(amountOfNuts)} nuts.</h3>
+      
+      <h3>Calories</h3>
+      <h4>Per 250ml: {Math.floor(perServing*0.4)}kcal</h4>  
+      <h4>Per 100ml: {(Math.floor((perServing*0.4) / 2.5))}kcal</h4>
+      <h6>minus pulp milk equates to around 40% of entirecalories</h6>
     </>
   )  
 }

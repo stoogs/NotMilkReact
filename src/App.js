@@ -15,9 +15,9 @@ class App extends Component {
     nutIndividualCalories: [20,7,16,3,19,9,32,26],
     nut100gCalories: [690, 622, 584, 560, 718, 655, 687, 654],
     nutIndividualWeight: [3, 1.2 ,3 ,0.7 ,2.8,  1.4 , 5 , 4],
-    chosen: "Choose A Nut",
+    chosen: "(Default) Almond",
     servings: 4,
-    consistency: 4,
+    consistency: 1,
     additionsNames: ["Dates","Honey","Vanilla","Cinammon","Cardamon"],
     option0: false,   //date
     option1: false,   //vanilla
@@ -75,7 +75,7 @@ class App extends Component {
         </Servings> 
         
         <Consistency consistency={this.state.consistency} consistencyValue={this.consistencyHandler}>
-          <p>Nuts {this.state.consistency}%</p>
+          <p>Consistency {this.state.consistency}x</p>
         </Consistency> 
 
         <Additions  

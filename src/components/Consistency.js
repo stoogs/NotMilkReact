@@ -4,8 +4,8 @@ const consistency = (props) => {
     return (
     <React.Fragment>
       {props.children}
-      <input type="range" min={1} max={20} step={0.5} onChange={props.consistencyValue} value={props.consistency}/>
-      {console.log("Nuts ", props.consistency,"%")}
+      <input type="range" min={0.25} max={2.00} step={0.25} onChange={props.consistencyValue} value={props.consistency}/>
+      {console.log("Consistency", props.consistency,"x")}
     </React.Fragment>
     )
 }
