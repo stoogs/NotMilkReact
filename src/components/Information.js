@@ -24,18 +24,21 @@ const information = ( props ) => {
     else if (props.nutChoice === "Walnut") { chosen = walnut}
   
     let totalCalories = ( (chosen[1]/100 * chosen[3]) * props.consistency )  // caloriesper100g / 100 * nuts needed per litre
-    let perServing = totalCalories / props.servings
+    let perServing = totalCalories 
     let amountOfNuts = ((props.servings*chosen[3]) / chosen[2]) * (props.consistency/4);
+    let milkPercent = props.consistency*chosen[3]/1000 * 40   // consist x nutgramsperlitre/1000 x minuspulp  1x(140/1000)*40%
     
     console.log("AON", amountOfNuts)
+    console.log("Total Calories",totalCalories)
+    console.log("milk percent",milkPercent)
   return (
     <>
       <h1>Information</h1>
       <h3>{Math.floor(amountOfNuts*chosen[2])} grams of {props.nutChoice}s needed or {props.servings*props.consistency/4} cups or {Math.floor(amountOfNuts)} nuts.</h3>
       
-      <h3>Calories</h3>
-      <h4>Per 250ml: {Math.floor(perServing*0.4)}kcal</h4>  
-      <h4>Per 100ml: {(Math.floor((perServing*0.4) / 2.5))}kcal</h4>
+      <h3>Milk is {milkPercent.toFixed(1)}%</h3>
+      <h4>Per 250ml: {Math.floor(perServing*0.4 / 4)}kcal</h4>  
+      <h4>Per 100ml: {(Math.floor((perServing*0.4) / 2.5 / 4))}kcal</h4>
       <h6>minus pulp milk equates to around 40% of entirecalories</h6>
     </>
   )  

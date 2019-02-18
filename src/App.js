@@ -19,6 +19,7 @@ class App extends Component {
     servings: 4,
     consistency: 1,
     additionsNames: ["Dates","Honey","Vanilla","Cinammon","Cardamon"],
+    additionsCalories: 0,
     option0: false,   //date
     option1: false,   //vanilla
     option2: false,   //honey
@@ -39,7 +40,8 @@ class App extends Component {
       else if(event.target.name===this.state.additionsNames[2]) {this.setState({ option2: event.target.checked})}
       else if(event.target.name===this.state.additionsNames[3]) {this.setState({ option3: event.target.checked})}
       else if(event.target.name===this.state.additionsNames[4]) {this.setState({ option4: event.target.checked})} 
-    }
+  }
+    
 
   render() {
 
