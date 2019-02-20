@@ -12,6 +12,7 @@ import Additions from './components/Additions';
 class App extends Component {
   state = {
     nutNames: ['Pecan','Almond','Cashew','Pistachio','Macadamia Nut','Hazelnut','Brazil Nut', 'Walnut'],
+    nutCostPer100g: [1.49, 0.92, 0.86, 0.80, 10, 1,49, 1,10, 1.40],
     nutIndividualCalories: [20,7,16,3,19,9,32,26],
     nut100gCalories: [690, 622, 584, 560, 718, 655, 687, 654],
     nutIndividualWeight: [3, 1.2 ,3 ,0.7 ,2.8,  1.4 , 5 , 4],

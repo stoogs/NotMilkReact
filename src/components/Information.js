@@ -23,36 +23,29 @@ const information = ( props ) => {
     else if (props.nutChoice === "Brazil Nut") { chosen = brazil}
     else if (props.nutChoice === "Walnut") { chosen = walnut}
   
-    let totalCalories = ( (chosen[1]/100 * chosen[3]) * props.consistency )  // caloriesper100g / 100 * nuts needed per litre
+    let totalCalories = ( (chosen[1]/100 * chosen[3]) * props.consistency );  // caloriesper100g / 100 * nuts needed per litre
+    let amountOfNuts = Math.floor(((props.servings*chosen[3]) / chosen[2]) * (props.consistency/4));
+    let milkPercent = (props.consistency*chosen[3]/1000 * 40).toFixed(1);   // consist x nutgramsperlitre/1000 x minuspulp  1x(140/1000)*40%
+    let cups = props.servings*props.consistency/4;
+    let grams = Math.floor(amountOfNuts*chosen[2]);
+    let twofiftyml = Math.floor(totalCalories*0.4 / 4);
+    let onehundredml = Math.floor((totalCalories*0.4) / 2.5 / 4);
+
     if (props.options[0] ? totalCalories+=20 : ''); //Add date calories
     if (props.options[1] ? totalCalories+=60 : ''); //Add honey calories
-
-    let amountOfNuts = ((props.servings*chosen[3]) / chosen[2]) * (props.consistency/4);
-    let milkPercent = props.consistency*chosen[3]/1000 * 40   // consist x nutgramsperlitre/1000 x minuspulp  1x(140/1000)*40%
     
-    console.log(props.options);
-    console.log("AON", amountOfNuts)
-    console.log("Total Calories",totalCalories)
-    console.log("milk percent",milkPercent)
   return (
     <>
       <h1>Information</h1>
-      <h3>{Math.floor(amountOfNuts*chosen[2])} grams of {props.nutChoice}s needed or {props.servings*props.consistency/4} cups or {Math.floor(amountOfNuts)} nuts.</h3>
+      <h3>{grams} grams of {props.nutChoice}s needed or {cups} cups or {amountOfNuts} nuts.</h3>
       
-      <h3>Milk is {milkPercent.toFixed(1)}%</h3>
-      <h4>Per 250ml: {Math.floor(totalCalories*0.4 / 4)}kcal</h4>  
-      <h4>Per 100ml: {(Math.floor((totalCalories*0.4) / 2.5 / 4))}kcal</h4>
+      <h3>Milk is {milkPercent}%</h3>
+      <h4>Per 250ml: {twofiftyml}kcal</h4>  
+      <h4>Per 100ml: {onehundredml}kcal</h4>
       <h6>minus pulp milk equates to around 40% of entirecalories</h6>
     </>
   )  
 }
-
-// servings={this.state.servings} 
-//                       consistency={this.state.consistency} 
-//                       nutChoice={this.state.nutChoice}
-//                       nutIndividualCalories={this.state.nutIndividualCalories} 
-//                       nut100gCalories={this.state.nut100gCalories} 
-//                       nutIndividualWeight={this.state.nutIndividualWeight} />
 
 //       - 1 cup pecans     = 125g TO 4 Cups water 1l - 3g   ea - 42
 //       - 1 cup almonds    = 140g TO 4 Cups water 1l - 1.2g ea - 116
