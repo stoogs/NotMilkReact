@@ -2,10 +2,11 @@ import React from 'react';
 
 const consistency = (props) => {
     return (
-    <React.Fragment>
+    <div className="Consistency">
       {props.children}
-      <h5>Supermarket<input type="range" min={0.25} max={2.00} step={0.25} onChange={props.consistencyValue} value={props.consistency}/>SuperThickit</h5>
-    </React.Fragment>
+      <p>Thin |-------------------------------------| Thick</p>
+      <h5><input type="range" min={0.25} max={2.00} step={0.25} onChange={props.consistencyValue} value={props.consistency}/></h5>
+    </div>
     )
 }
 

@@ -1,3 +1,139 @@
-.App {
-  text-align: center;
+* {
+  margin:0;
+  /* border: 1px solid black; */
 }
+
+.App {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  text-align: center;
+  color: #847577;
+  margin-bottom:5px;
+  text-align: center;
+  margin:10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.Logo img{
+  margin:10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.Heading {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  font-size: 40px;
+  text-align: center;
+  color: #847577;
+  margin:10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.Choice{
+  margin:10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+  .Choice img {
+    width: 70px;
+    height: 60px;}
+      .Choice img:hover {
+      width: 70px;
+      height: 60px;
+      background: #FFFFFF;
+      box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.75);
+      border-radius: 12px;}
+        .Choice img:active {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          background: #847577;}
+
+.Information {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  line-height: normal;
+  font-size: 20px;
+  text-align: center;
+  color: #847577;
+  margin:10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+  .Information h2{
+    margin:5px;
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+  }
+    .Information h3{
+      margin:5px;
+      /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+    }
+  .Information h4{
+    margin:5px;
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+  }
+  .Information h4 b{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    line-height: normal;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    color: #847577;
+    margin:5px;}
+    .Information h6{
+      margin:5px;
+      /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+    }
+
+.Settings {
+  display: flex;
+  justify-content: center;
+  margin: 0px 5px;
+  align-items: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.Settings .Servings {
+  padding-top: 25px;
+  width: 250px;
+  height: 100px;
+  margin: 0px 10px;
+  /* border: 1px solid black; */
+}
+
+.Settings .Consistency {
+  padding-top: 25px;
+  width: 250px;
+  height: 100px;
+  margin: 0px 10px;
+  /* border: 1px solid black; */
+}
+.Settings .Servings input{
+  margin: 15px;
+}
+.Settings .Consistency input{
+  margin: 15px;
+}
+
+.Additions {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  line-height: normal;
+  font-size: 40px;
+  text-align: center;
+  color: #847577;
+  
+}
+
+.AddLabels {
+  display:flex;
+  justify-content: center;
+}
+
+  .Additions input[type=checkbox] {
+    display:flex;
+    margin: 20px;
+    transform:scale(2, 2);
+    justify-content: center;
+  }

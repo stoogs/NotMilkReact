@@ -52,14 +52,14 @@ const information = ( props ) => {
     if (cups > 1 ? cupText = cups + " cups" : cupText = cups + " cup");
 
   return (
-    <>
-      <h1>Information</h1>
-      <h3>{grams} grams of {nutChoice} needed or {cupText}  or {amountOfNuts} nuts.</h3>
-      <h3>Milk is {milkPercent}%</h3>
-      <h4>Per 250ml: {twofiftyml}kcal</h4>  
-      <h4>Per 100ml: {onehundredml}kcal</h4>
-      <h6>minus pulp milk equates to around 40% of entirecalories</h6>
-    </>
+    <React.Fragment>
+      <div className="Information">
+        <h2>Milk is <b>{milkPercent}%</b></h2>
+        <h3>{grams} grams of {nutChoice} needed or {cupText}  or {amountOfNuts} nuts.</h3>
+        <h4><i>Per 250ml:</i> <b>{twofiftyml}</b>kcal / <i>Per 100ml:</i> <b>{onehundredml}</b>kcal</h4>  
+        <h6><i>minus pulp milk equates to around 40% of entirecalories</i></h6>
+      </div>
+    </React.Fragment>
   )  
 }
 

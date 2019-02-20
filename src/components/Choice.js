@@ -4,9 +4,9 @@ import React from 'react';
 const choice = (props) => {
   
     return (
-    <>
-      <p>{props.children}</p>
-    </>
+    <div  className="Choice">
+      {props.children}
+    </div>
     )
 }
   

@@ -2,9 +2,11 @@ import React from 'react';
 
 const heading = ( props ) => {
   return (
-    <>
-      <h1>{props.chosen}</h1>
-    </>
+    <React.Fragment>
+      <div className="Heading">
+        {props.chosen}
+      </div>
+    </React.Fragment>
   )  
 }
 
