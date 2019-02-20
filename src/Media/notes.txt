@@ -1,0 +1,18 @@
+
+
+// Future ideas - 
+
+        Change background colour depending on milk% Creamier to whiter.
+DONE    Cost per nut Serving
+        Custom Additions values
+
+
+
+//       - 1 cup pecans     = 125g TO 4 Cups water 1l - 3g   ea - 42
+//       - 1 cup almonds    = 140g TO 4 Cups water 1l - 1.2g ea - 116
+//       - 1 cup cashews    = 150g TO 4 Cups water 1l - 3g   ea - 50
+//       - 1 cup pistachios = 100g TO 4 Cups water 1l - 3g   ea - 33
+//       - 1 cup macadamia  = 134g TO 4 Cups water 1l - 2.8g ea - 47
+//       - 1 cup hazelnut   = 150g TO 4 Cups water 1l - 1.4g ea - 107
+//       - 1 cup brazil nut = 133g TO 4 Cups water 1l - 5g   ea - 26
+//       - 1 cup walnut     = 130g TO 4 Cups water 1l - 4g   ea - 32

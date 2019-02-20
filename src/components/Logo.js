@@ -1,7 +1,7 @@
 import React from 'react';
 
 function logo(props) {
-  return <h1>{props.children}</h1>
+  return <img src={require("../Media/Logo/notmilklogo.svg")} height="200px" />
 }
 
 export default logo;

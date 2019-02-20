@@ -11,11 +11,12 @@ import Additions from './components/Additions';
 
 class App extends Component {
   state = {
-    nutNames: ['Pecan','Almond','Cashew','Pistachio','Macadamia Nut','Hazelnut','Brazil Nut', 'Walnut'],
-    nutCostPer100g: [1.49, 0.92, 0.86, 0.80, 10, 1,49, 1,10, 1.40],
-    nutIndividualCalories: [20,7,16,3,19,9,32,26],
-    nut100gCalories: [690, 622, 584, 560, 718, 655, 687, 654],
-    nutIndividualWeight: [3, 1.2 ,3 ,0.7 ,2.8,  1.4 , 5 , 4],
+    nutNames: ['Pecan','Almond','Cashew','Pistachio','Macadamia Nut','Hazelnut','Brazil Nut', 'Walnut', 'Coconut'],
+    nutCostPer100g: [1.49, 0.92, 0.86, 0.80, 10, 1,49, 1,10, 1.40, 0.85],
+    nutIndividualCalories: [20, 7, 16, 3, 19, 9, 32, 26, 1049],
+    nut100gCalories: [690, 622, 584, 560, 718, 655, 687, 654, 353],
+    nutIndividualWeight: [3, 1.2 ,3 ,0.7 ,2.8,  1.4 , 5 , 4, 300],
+    nutGramsRequiredPerLitre: [125, 140, 150, 100, 134, 150, 133, 130, 80],
     chosen: "(Default) Almond",
     servings: 4,
     consistency: 1,
@@ -47,22 +48,23 @@ class App extends Component {
   render() {
 
     return (
-      
+  
       <div className="App">
     
-        <Logo>LOGO</Logo>
+        <Logo height="10%"/>
 
         <Heading chosen={this.state.chosen} />
 
         <Choice>
-          <button onClick={this.chooseNut.bind(this, this.state.nutNames[0])}>Pecan</button>
-          <button onClick={this.chooseNut.bind(this, this.state.nutNames[1])}>Almond</button>
-          <button onClick={this.chooseNut.bind(this, this.state.nutNames[2])}>Cashew</button>
-          <button onClick={this.chooseNut.bind(this, this.state.nutNames[3])}>Pistachio</button>
-          <button onClick={this.chooseNut.bind(this, this.state.nutNames[4])}>Macadamia Nut</button>
-          <button onClick={this.chooseNut.bind(this, this.state.nutNames[5])}>Hazelnut</button>
-          <button onClick={this.chooseNut.bind(this, this.state.nutNames[6])}>Brazil Nut</button>
-          <button onClick={this.chooseNut.bind(this, this.state.nutNames[7])}>Walnut</button>
+          <a><img src={require("../src/Media/svg/WithoutShells/pecan.svg")} alt='Pecan' height="50px" onClick={this.chooseNut.bind(this, this.state.nutNames[0])} /></a>
+          <a><img src={require("../src/Media/svg/WithoutShells/almond.svg")} alt='Almond' height="50px" onClick={this.chooseNut.bind(this, this.state.nutNames[1])} /></a>
+          <a><img src={require("../src/Media/svg/WithoutShells/cashew.svg")} alt='Cashew' height="50px" onClick={this.chooseNut.bind(this, this.state.nutNames[2])} /></a>
+          <a><img src={require("../src/Media/svg/WithoutShells/pistachio.svg")} alt='Pistachio' height="50px" onClick={this.chooseNut.bind(this, this.state.nutNames[3])} /></a>
+          <a><img src={require("../src/Media/svg/WithoutShells/macadamia.svg")} alt='Macadamia' height="50px" onClick={this.chooseNut.bind(this, this.state.nutNames[4])} /></a>
+          <a><img src={require("../src/Media/svg/WithoutShells/hazelnut.svg")} alt='Hazelnut' height="50px" onClick={this.chooseNut.bind(this, this.state.nutNames[5])}/></a>
+          <a><img src={require("../src/Media/svg/WithoutShells/brazil.svg")} alt='Brazil' height="50px" onClick={this.chooseNut.bind(this, this.state.nutNames[6])} /></a>
+          <a><img src={require("../src/Media/svg/WithoutShells/walnut.svg")} alt='Walnut' height="50px" onClick={this.chooseNut.bind(this, this.state.nutNames[7])} /></a>
+          <a><img src={require("../src/Media/svg/WithoutShells/coconut.svg")} alt='Coconut' height="50px" onClick={this.chooseNut.bind(this, this.state.nutNames[8])} /></a>
         </Choice>
 
         <Information  servings={this.state.servings} 
@@ -71,12 +73,13 @@ class App extends Component {
                       nutIndividualCalories={this.state.nutIndividualCalories} 
                       nut100gCalories={this.state.nut100gCalories} 
                       nutIndividualWeight={this.state.nutIndividualWeight}
+                      nutGramsRequiredPerLitre={this.state.nutGramsRequiredPerLitre}
                       options={ [this.state.option0,this.state.option1,this.state.option2, this.state.option3,this.state.option4] }
                       />
    
         <Servings servings={this.state.servings} servingSize={this.servingSizeHandler}>
           <p>Servings {this.state.servings}</p>
-          <p>{this.state.servings * 0.25} l / {this.state.servings} cups</p>
+          <p>{this.state.servings * 0.25} l / {this.state.servings} cup(s)</p>
         </Servings> 
         
         <Consistency consistency={this.state.consistency} consistencyValue={this.consistencyHandler}>
@@ -90,6 +93,7 @@ class App extends Component {
         </Additions>
 
         {console.clear()}
+        
   </div>
     );
   }
