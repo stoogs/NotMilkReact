@@ -80,12 +80,12 @@ class App extends Component {
       <div className="Settings">
         <Servings   servings={this.state.servings} 
                     servingSize={this.servingSizeHandler}>
-                    <h3>Servings {this.state.servings}</h3>
+                    <h4>Servings {this.state.servings}</h4>
                     <p>{this.state.servings * 0.25} l / {this.state.servings} cup(s)</p>
                     </Servings> 
         <Consistency consistency={this.state.consistency} 
                     consistencyValue={this.consistencyHandler}>
-                    <h3>Consistency {this.state.consistency}x</h3>
+                    <h4>Consistency {this.state.consistency}x</h4>
                     </Consistency> 
       </div>
 
