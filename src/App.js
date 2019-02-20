@@ -80,12 +80,12 @@ class App extends Component {
       <div className="Settings">
         <Servings   servings={this.state.servings} 
                     servingSize={this.servingSizeHandler}>
-                    <h2>Servings {this.state.servings}</h2>
+                    <h3>Servings {this.state.servings}</h3>
                     <p>{this.state.servings * 0.25} l / {this.state.servings} cup(s)</p>
                     </Servings> 
         <Consistency consistency={this.state.consistency} 
                     consistencyValue={this.consistencyHandler}>
-                    <h2>Consistency {this.state.consistency}x</h2>
+                    <h3>Consistency {this.state.consistency}x</h3>
                     </Consistency> 
       </div>
 
@@ -95,8 +95,7 @@ class App extends Component {
           additions={this.additionsHandler}>
         </Additions>
 
-        {console.clear()}
-        
+        {/* {console.clear()} */}
   </div>
     );
   }

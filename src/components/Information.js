@@ -55,9 +55,9 @@ const information = ( props ) => {
     <React.Fragment>
       <div className="Information">
         <h2>Milk is <b>{milkPercent}%</b></h2>
-        <h3>{grams} grams of {nutChoice} needed or {cupText}  or {amountOfNuts} nuts.</h3>
-        <h4><i>Per 250ml:</i> <b>{twofiftyml}</b>kcal / <i>Per 100ml:</i> <b>{onehundredml}</b>kcal</h4>  
-        <h6><i>minus pulp milk equates to around 40% of entirecalories</i></h6>
+        <h4>{grams} grams / {cupText} / {amountOfNuts} nuts</h4>
+        <h5><i>250ml:</i>  <b> {twofiftyml} </b>kcal  / <i> 100ml: </i> <b> {onehundredml} </b>kcal</h5>  
+        <h6><i>minus milk pulp ~40% of entire calories</i></h6>
       </div>
     </React.Fragment>
   )  
