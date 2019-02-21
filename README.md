@@ -1,3 +1,13 @@
+Nut milk recipe guide made to learn React.
+
+![](example.png)
+
+
+React Native version to follow.
+
+
+## Installation Guide
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
