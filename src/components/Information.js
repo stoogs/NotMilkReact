@@ -30,7 +30,7 @@ const information = ( props ) => {
     let totalCalories = ( (chosen[1]/100 * chosen[3]) * props.consistency );  // caloriesper100g / 100 * nuts needed per litre
     let amountOfNuts = Math.floor(((props.servings*chosen[3]) / chosen[2]) * (props.consistency/4));
     let milkPercent = (props.consistency*chosen[3]/1000 * 40).toFixed(1);   // consist x nutgramsperlitre/1000 x minuspulp  1x(140/1000)*40%
-    let cups = props.servings*props.consistency/4;
+    let cups = (props.servings*props.consistency/4).toFixed(2);
     let grams = Math.floor(amountOfNuts*chosen[2]);
     let nutChoice = props.nutChoice+'s';
     let cupText = 'empty CupsText';
@@ -47,12 +47,12 @@ const information = ( props ) => {
     if (props.options[1] ? totalCalories+=60 : ''); //Add honey calories
     let twofiftyml = Math.floor(totalCalories*0.4 / 4);
     let onehundredml = Math.floor((totalCalories*0.4) / 2.5 / 4);
-
     //  FORMATTING NICENESS
-    if (cups > 1 ? cupText = cups + " cups" : cupText = cups + " cup");
+    if (cups == 1 ? cupText = cups + " cups" : cupText = cups + " cup");
 
   return (
     <React.Fragment>
+}
       <div className="Information">
         <h2>Milk is <b>{milkPercent}%</b></h2>
         <h4>{grams} grams / {cupText} / {amountOfNuts} nuts</h4>
