@@ -52,7 +52,6 @@ const information = ( props ) => {
 
   return (
     <React.Fragment>
-}
       <div className="Information">
         <h2>Milk is <b>{milkPercent}%</b></h2>
         <h4>{grams} grams / {cupText} / {amountOfNuts} nuts</h4>
