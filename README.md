@@ -14,6 +14,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `npm install`
+To install all dependencies from package.json.<br>
+
+If you get errors... `If you are having npm permission problems like i had, runs this command, EXACTLY. the whoami is not a placeholder for your name.`
+### `sudo chown -R $(whoami) ~/.npm` 
+
+Runs the app in the development mode.<br>
+
 ### `npm start`
 
 Runs the app in the development mode.<br>
